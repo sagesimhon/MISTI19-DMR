@@ -154,3 +154,4 @@ def run_DMR(mu=0, sigma=1, epsilon=1e-4, max_iter=1e4):
 if __name__ == "__main__" or __name__ == 'basic_model_MMM':
     run_DMR()
 
+#test commit
