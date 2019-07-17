@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8039055-4e27-4452-a98b-8ad25329332f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DMR_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMR_1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +14,7 @@
     <SUITE FILE_PATH="coverage/MISTI19$EM_practice.coverage" NAME="EM_practice Coverage Results" MODIFIED="1561554144552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$MMM_all_samples.coverage" NAME="MMM_all_samples Coverage Results" MODIFIED="1562250796176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$basic_model_MMM.coverage" NAME="basic_model_MMM Coverage Results" MODIFIED="1561895372876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISTI19$DMR_1.coverage" NAME="DMR_1 Coverage Results" MODIFIED="1563296328605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISTI19$DMR_1.coverage" NAME="DMR_1 Coverage Results" MODIFIED="1563312233471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$EM_basic_model.coverage" NAME="EM_basic_model Coverage Results" MODIFIED="1561377749676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/MISTI19$pytest_in_basic_model_MMM_py.coverage" NAME="pytest in basic_model_MMM.py Coverage Results" MODIFIED="1561554368539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DMR_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-772">
-              <caret line="80" column="4" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+            <state relative-caret-position="1406">
+              <caret line="87" column="21" lean-forward="true" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -144,6 +144,9 @@
       <find>__draw_z</find>
       <find>log_lik</find>
       <find>x</find>
+      <find>random.rand</find>
+      <find>random</find>
+      <find>self.T</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -373,7 +376,7 @@
       <updated>1559533616168</updated>
       <workItem from="1559533617567" duration="57371000" />
       <workItem from="1563268581392" duration="4746000" />
-      <workItem from="1563274182687" duration="7243000" />
+      <workItem from="1563274182687" duration="8072000" />
     </task>
     <servers />
   </component>
@@ -410,7 +413,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69360000" />
+    <option name="totallyTimeSpent" value="70189000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -423,13 +426,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19275825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32971996" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2646793" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2646793" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39927733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -438,7 +442,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32971996" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.43450767" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.43450767" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32971996" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -705,8 +709,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DMR_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-772">
-          <caret line="80" column="4" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+        <state relative-caret-position="1406">
+          <caret line="87" column="21" lean-forward="true" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

@@ -78,7 +78,7 @@ class DMR:
             categories, counts = np.unique(self.data[key]['sequence'], return_counts=True)
             curr_z = np.zeros(len(self.data[key]['sequence']))
             for j in range(len(categories)):
-                tmp_z = np.random.choice(self.T, size=counts[j], p=P[id, categories[j]])
+                tmp_z = np.random.choice(np.arange(self.T), size=counts[j], p=P[id, categories[j]])
                 curr_z[self.data[key]['sequence'] == categories[j]] = tmp_z
             self.z.append(curr_z)
 
