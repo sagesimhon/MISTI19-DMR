@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.special import logsumexp
-from scipy.special import gamma
+from scipy.special import gammaln as gammaln
 from scipy import optimize as optimize
 from scipy.special import digamma as digamma
 import json
@@ -92,23 +92,28 @@ class DMR:
             for t in range(self.T):
                 self.n_td[id][t] = counts_t[t]
 
-    def log_likelihood(self, alph):
+
+    def log_likelihood_lam(self, lam):
         """Log-likelihood P(z, lambda), using self.z and self.lam"""
-        term1 = 1
-        term2 = 1
+        term1 = 0
+        term2 = 0
+
         for d in range(self.D):
-            term1 *= gamma(np.sum(alph, axis=1))/gamma(np.sum(alph, axis=1)+np.sum(self.n_td, axis=1))
+            term1 += gammaln(logsumexp(np.dot(self.x, lam.T), axis=1))
+            term1 -= gammaln(logsumexp(np.dot(self.x, lam.T)+self.n_td, axis=1))
             for t in range(self.T):
-                term1 *= gamma(alph[d][t] + self.n_td[d][t])/gamma(alph[d][t])
+                term1 += gammaln(np.dot(self.x, lam.T)[d][t] + self.n_td[d][t])
+                term1 -= gammaln(np.dot(self.x, lam.T))[d][t]
         for t in range(self.T):
             for f in range(self.F):
-                term2 *= 1/math.sqrt(2*math.pi*self.sigma**2)*math.exp(-self.lam[t][f]**2/(2*self.sigma**2))
+                term2 += math.log(1/math.sqrt(2*math.pi*self.sigma**2))*(-lam[t][f]**2/(2*self.sigma**2))
 
-        return term1*term2
+        return term1+term2
 
     def d_log_likelihood(self, alph):
         """Derivative of log-likelihood P(z, lambda), using self.z and self.lam_t_k for topic t and feature f
            NOTE: for now hard coded t and f and d as 0, 0, 0
+           NOTE: In terms of alpha, use d_log_likelihood_lam for in terms of lambda.
         """
         t = 0
         f = 0
@@ -117,20 +122,39 @@ class DMR:
         res = np.sum(np.dot(self.x.T[f], alph.T[t].T), axis=0) * (digamma(np.sum(alph, axis=1)) - digamma(np.sum(alph, axis=1)+np.sum(self.n_td, axis=1)) + digamma(alph[d][t]+self.n_td[d][t]) - digamma(alph[d][t]))-self.lam[t][f]/self.sigma**2
         return res
 
-    def optimize_lambda(self):
-        """Receives a lamda and finds new optimal lambda according to bfgs
-           NOTE: currently optimizing alpha
+    def d_log_likelihood_lam(self, lam):
+        """Derivative of log-likelihood P(z, lambda), using self.z and self.lam_t_k for topic t and feature f
+           NOTE: for now hard coded t and f and d as 0, 0, 0
         """
 
-        def ll(alph):
-            return self.log_likelihood(alph)
+        t = 0
+        f = 0
+        d = 0
 
-        def dll(alph):
-            return self.d_log_likelihood(alph)
+        res = np.sum(np.dot(self.x.T[f], np.exp(np.dot(self.x, lam.T)).T[t].T), axis=0)\
+              * (digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1))
+              - digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1)+np.sum(self.n_td, axis=1))
+              + digamma(np.exp(np.dot(self.x, lam.T))[d][t]+self.n_td[d][t])
+              - digamma(np.exp(np.dot(self.x, lam.T))[d][t]))-lam[t][f]/self.sigma**2
+        return res
 
+    def optimize_lambda(self):
+        """Receives a lamda and finds new optimal lambda according to bfgs"""
+
+        def ll(lam):
+            lam = np.reshape(lam, (self.T, self.F + 1))
+            res = self.log_likelihood_lam(lam)
+            return res
+
+        def dll(lam):
+            lam = np.reshape(lam, (self.T, self.F + 1))
+            res = self.d_log_likelihood_lam(lam)
+            res = res.reshape((self.T * (self.F + 1)))
+            return res
 
         random_starting_point = np.random.rand(self.lam.shape[0], self.lam.shape[1])
         newlam = optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[0]
+        newlam = newlam.reshape((self.T * (self.F + 1)))
         self.sigma = np.var(newlam, axis=1) #correct axis to sum over?
         self.mu = np.mean(newlam, axis=1) #correct axis to sum over?
         self.lam = newlam
@@ -138,8 +162,6 @@ class DMR:
 
     def fit(self):
         """Fit data by stochastic EM"""
-
-
         iters = 0
         while iters < self.max_iter:
             self.optimize_lambda()
