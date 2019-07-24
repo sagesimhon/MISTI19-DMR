@@ -88,7 +88,7 @@ class DMR:
 
             parsed_data[id] = self.data[key]['sequence']
             categories_t, counts_t = np.unique(curr_z, return_counts=True)
-            if id == 0: print('curr_z: ', [o for o in curr_z])
+            # if id == 0: print('curr_z: ', [o for o in curr_z])
             for t in range(self.T):
                 self.n_td[id][t] = counts_t[t]
 
@@ -123,20 +123,28 @@ class DMR:
         return res
 
     def d_log_likelihood_lam(self, lam):
-        """Derivative of log-likelihood P(z, lambda), using self.z and self.lam_t_k for topic t and feature f
-           NOTE: for now hard coded t and f and d as 0, 0, 0
-        """
+        """Derivative of log-likelihood P(z, lambda), using self.z and self.lam_t_k.
+           Output: 2-D Array where entry t, f is derivative for topic t and feature f
+           NOTE: Used author's implementation for this func"""
 
-        t = 0
-        f = 0
-        d = 0
+        # res = np.empty((self.T, self.F+1))
+        # for t in range(self.T):
+        #     for f in range(self.F+1):
+        #         res[t][f] = np.sum(np.dot(self.x.T[f], np.exp(np.dot(self.x, lam.T)).T[t].T)\
+        #               * (digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1))
+        #               - digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1)+np.sum(self.n_td, axis=1))
+        #               + digamma(np.exp(np.dot(self.x, lam.T))+self.n_td)
+        #               - digamma(np.exp(np.dot(self.x, lam.T)))), axis=0)\
+        #               -lam[t][f]/self.sigma**2
 
-        res = np.sum(np.dot(self.x.T[f], np.exp(np.dot(self.x, lam.T)).T[t].T), axis=0)\
-              * (digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1))
-              - digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1)+np.sum(self.n_td, axis=1))
-              + digamma(np.exp(np.dot(self.x, lam.T))[d][t]+self.n_td[d][t])
-              - digamma(np.exp(np.dot(self.x, lam.T))[d][t]))-lam[t][f]/self.sigma**2
-        return res
+        result = np.sum(self.x[:, np.newaxis, :] * np.exp(np.dot(self.x, self.lam.T))[:, :, np.newaxis] \
+                        * (digamma(np.sum(np.exp(np.dot(self.x, self.lam.T)), axis=1))[:,np.newaxis,np.newaxis]\
+            - digamma(np.sum(self.n_td+np.exp(np.dot(self.x, self.lam.T)), axis=1))[:,np.newaxis,np.newaxis]\
+            + digamma(self.n_td+np.exp(np.dot(self.x, self.lam.T)))[:,:,np.newaxis]\
+            - digamma(np.exp(np.dot(self.x, self.lam.T)))[:,:,np.newaxis]), axis=0)\
+            - lam / (self.sigma ** 2)
+        result = -result
+        return result
 
     def optimize_lambda(self):
         """Receives a lamda and finds new optimal lambda according to bfgs"""
@@ -154,9 +162,9 @@ class DMR:
 
         random_starting_point = np.random.rand(self.lam.shape[0], self.lam.shape[1])
         newlam = optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[0]
-        newlam = newlam.reshape((self.T * (self.F + 1)))
-        self.sigma = np.var(newlam, axis=1) #correct axis to sum over?
-        self.mu = np.mean(newlam, axis=1) #correct axis to sum over?
+        newlam = newlam.reshape((self.T, (self.F + 1)))
+        self.sigma = np.var(newlam[0], axis=0) #correct axis to sum over? todo: un-hard code var over 0th row and fix axis
+        self.mu = np.mean(newlam[0], axis=0) #correct axis to sum over? todo: un-hard code mean over 0th row and fix axis
         self.lam = newlam
         self.__calculate_alpha()
 
@@ -167,7 +175,7 @@ class DMR:
             self.optimize_lambda()
             self.__draw_z()
             iters += 1
-            print(self.lam)
+            print('lambda: ', self.lam)
 
 def load_test_files(sequence_data_filename='simple_data/data_for_michael.json', phi_filename='simple_data/signatures_for_michael.npy', metadata='clinical_data_only_binary.csv'):
     """ Load and parse DNA database """
