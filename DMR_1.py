@@ -89,6 +89,8 @@ class DMR:
             parsed_data[id] = self.data[key]['sequence']
             categories_t, counts_t = np.unique(curr_z, return_counts=True)
             # if id == 0: print('curr_z: ', [o for o in curr_z])
+
+            ############################# Update self.n_td accordingly #############################
             for t in range(self.T):
                 self.n_td[id][t] = counts_t[t]
 
@@ -110,32 +112,10 @@ class DMR:
 
         return term1+term2
 
-    def d_log_likelihood(self, alph):
-        """Derivative of log-likelihood P(z, lambda), using self.z and self.lam_t_k for topic t and feature f
-           NOTE: for now hard coded t and f and d as 0, 0, 0
-           NOTE: In terms of alpha, use d_log_likelihood_lam for in terms of lambda.
-        """
-        t = 0
-        f = 0
-        d = 0
-
-        res = np.sum(np.dot(self.x.T[f], alph.T[t].T), axis=0) * (digamma(np.sum(alph, axis=1)) - digamma(np.sum(alph, axis=1)+np.sum(self.n_td, axis=1)) + digamma(alph[d][t]+self.n_td[d][t]) - digamma(alph[d][t]))-self.lam[t][f]/self.sigma**2
-        return res
-
     def d_log_likelihood_lam(self, lam):
         """Derivative of log-likelihood P(z, lambda), using self.z and self.lam_t_k.
            Output: 2-D Array where entry t, f is derivative for topic t and feature f
            NOTE: Used author's implementation for this func"""
-
-        # res = np.empty((self.T, self.F+1))
-        # for t in range(self.T):
-        #     for f in range(self.F+1):
-        #         res[t][f] = np.sum(np.dot(self.x.T[f], np.exp(np.dot(self.x, lam.T)).T[t].T)\
-        #               * (digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1))
-        #               - digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1)+np.sum(self.n_td, axis=1))
-        #               + digamma(np.exp(np.dot(self.x, lam.T))+self.n_td)
-        #               - digamma(np.exp(np.dot(self.x, lam.T)))), axis=0)\
-        #               -lam[t][f]/self.sigma**2
 
         result = np.sum(self.x[:, np.newaxis, :] * np.exp(np.dot(self.x, self.lam.T))[:, :, np.newaxis] \
                         * (digamma(np.sum(np.exp(np.dot(self.x, self.lam.T)), axis=1))[:,np.newaxis,np.newaxis]\
@@ -147,7 +127,7 @@ class DMR:
         return result
 
     def optimize_lambda(self):
-        """Receives a lamda and finds new optimal lambda according to bfgs"""
+        """Receives a lambda and finds new optimal lambda according to bfgs"""
 
         def ll(lam):
             lam = np.reshape(lam, (self.T, self.F + 1))
@@ -161,21 +141,38 @@ class DMR:
             return res
 
         random_starting_point = np.random.rand(self.lam.shape[0], self.lam.shape[1])
-        newlam = optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[0]
+        newlam, val, convergence = optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[0], optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[1], optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[2]['warnflag']
         newlam = newlam.reshape((self.T, (self.F + 1)))
-        self.sigma = np.var(newlam[0], axis=0) #correct axis to sum over? todo: un-hard code var over 0th row and fix axis
-        self.mu = np.mean(newlam[0], axis=0) #correct axis to sum over? todo: un-hard code mean over 0th row and fix axis
+        self.sigma = np.var(newlam[1])
+        self.mu = np.mean(newlam[1])
         self.lam = newlam
         self.__calculate_alpha()
+
+        return convergence, val
 
     def fit(self):
         """Fit data by stochastic EM"""
         iters = 0
+        f = self.log_likelihood_lam(self.lam)
+        counter = 0
         while iters < self.max_iter:
-            self.optimize_lambda()
+            c = self.optimize_lambda()[0]
+            new_f = self.optimize_lambda()[1]
             self.__draw_z()
             iters += 1
             print('lambda: ', self.lam)
+            # if c == 0:
+            #     print('CONVERGENCE. Total iterations: ', iters)
+            #     print('phi: ', self.phi)
+            #     break
+            if new_f[1] >= f[1] and new_f[0] >= f[0]: # if no improvement in this iteration todo un hard code for 1 feature. consecutive unimprovemnet??
+                counter += 1
+            if counter == 10:
+                print('No more improvement. Total iterations: ', iters)
+                break
+
+            f = new_f
+
 
 def load_test_files(sequence_data_filename='simple_data/data_for_michael.json', phi_filename='simple_data/signatures_for_michael.npy', metadata='clinical_data_only_binary.csv'):
     """ Load and parse DNA database """
@@ -187,14 +184,15 @@ def load_test_files(sequence_data_filename='simple_data/data_for_michael.json', 
 
         csv_reader = list(csv.reader(metadata1, delimiter=','))
         num_samples = sum(1 for row in csv_reader) - 1
-        num_features = 4 #len(csv_reader[0])
+        num_features = 1 #len(csv_reader[0])
         x = np.zeros((num_samples, num_features))
         row_idx = 0
         clinical_data = []
         for row in csv_reader:
             if row_idx != 0:
                 #want array of cols 3 to 6 (features)
-                for feature_idx, val in enumerate(row[3:]):
+                #want array of cols 1 to 1 (age)
+                for feature_idx, val in enumerate(row[1:1]):
                     x[row_idx-1][feature_idx] = val
                 clinical_data.append(row[0])
             row_idx += 1

@@ -4,6 +4,7 @@
     <list default="true" id="c8039055-4e27-4452-a98b-8ad25329332f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DMR_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMR_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +15,11 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MISTI19$EM_practice.coverage" NAME="EM_practice Coverage Results" MODIFIED="1561554144552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$MMM_all_samples.coverage" NAME="MMM_all_samples Coverage Results" MODIFIED="1562250796176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISTI19$DMR_1__1_.coverage" NAME="DMR_1 (1) Coverage Results" MODIFIED="1563969496625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/private/var/folders/nr/lr47yfs931sdl0vt83xch47h0000gn/T/com.apple.mail/com.apple.mail/compose/attach" />
     <SUITE FILE_PATH="coverage/MISTI19$lbfgsb.coverage" NAME="lbfgsb Coverage Results" MODIFIED="1563796348296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/anaconda3/lib/python3.7/site-packages/scipy/optimize" />
     <SUITE FILE_PATH="coverage/MISTI19$basic_model_MMM.coverage" NAME="basic_model_MMM Coverage Results" MODIFIED="1561895372876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$authors_dmr.coverage" NAME="authors_dmr Coverage Results" MODIFIED="1563963536989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISTI19$DMR_1.coverage" NAME="DMR_1 Coverage Results" MODIFIED="1563968963174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISTI19$DMR_1.coverage" NAME="DMR_1 Coverage Results" MODIFIED="1564399044501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$EM_basic_model.coverage" NAME="EM_basic_model Coverage Results" MODIFIED="1561377749676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/MISTI19$pytest_in_basic_model_MMM_py.coverage" NAME="pytest in basic_model_MMM.py Coverage Results" MODIFIED="1561554368539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -26,17 +28,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simple_data/data_for_michael.json">
           <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="204">
-              <caret column="64055" selection-start-column="64055" selection-end-column="64055" />
+            <state>
+              <caret column="31" selection-start-column="31" selection-end-column="31" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple_data/signatures_for_michael.npy">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DMR_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="270">
+              <caret line="129" column="75" selection-start-line="129" selection-start-column="71" selection-end-line="129" selection-end-column="75" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -45,9 +52,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clinical_data.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="45" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file:///anaconda3/lib/python3.7/site-packages/numpy/core/_methods.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
+            <state relative-caret-position="690">
               <caret line="54" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
@@ -56,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/authors_dmr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-28">
+            <state relative-caret-position="450">
               <caret line="34" column="28" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="28" />
               <folding>
                 <element signature="e#46#64#0" expanded="true" />
@@ -68,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///anaconda3/lib/python3.7/site-packages/scipy/optimize/optimize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
+            <state relative-caret-position="4380">
               <caret line="292" selection-start-line="292" selection-end-line="292" />
             </state>
           </provider>
@@ -77,20 +93,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///anaconda3/lib/python3.7/site-packages/scipy/optimize/lbfgsb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="281" column="8" lean-forward="true" selection-start-line="281" selection-start-column="8" selection-end-line="281" selection-end-column="8" />
+            <state relative-caret-position="4095">
+              <caret line="281" column="8" selection-start-line="281" selection-start-column="8" selection-end-line="281" selection-end-column="8" />
               <folding>
                 <element signature="e#1376#1440#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="1134" selection-start-line="1134" selection-end-line="1134" />
             </state>
           </provider>
         </entry>
@@ -105,18 +112,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinical_data.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2759">
-              <caret selection-end-line="2" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/authors_lda.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="540">
               <caret line="40" column="19" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="19" />
             </state>
           </provider>
@@ -158,8 +156,10 @@
       <find>self.vecs</find>
       <find>newaxis</find>
       <find>n_m_z</find>
-      <find>n_m_</find>
       <find>reshape</find>
+      <find>curr_z</find>
+      <find>n_m_</find>
+      <find>n_td</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,7 +191,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,6 +211,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,6 +237,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.DMR_1">
+    <configuration name="DMR_1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MISTI19" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="/private/var/folders/nr/lr47yfs931sdl0vt83xch47h0000gn/T/com.apple.mail/com.apple.mail/compose/attach" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="/private/var/folders/nr/lr47yfs931sdl0vt83xch47h0000gn/T/com.apple.mail/com.apple.mail/compose/attach/DMR_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="DMR_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MISTI19" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -325,28 +347,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="basic_model_MMM" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MISTI19" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic_model_MMM.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="lbfgsb" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MISTI19" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -371,19 +371,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.EM_basic_model" />
-      <item itemvalue="Python.basic_model_MMM" />
       <item itemvalue="Python.MMM_all_samples" />
       <item itemvalue="Python.DMR_1" />
       <item itemvalue="Python.lbfgsb" />
       <item itemvalue="Python.authors_dmr" />
+      <item itemvalue="Python.DMR_1 (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.DMR_1" />
+        <item itemvalue="Python.DMR_1 (1)" />
         <item itemvalue="Python.authors_dmr" />
         <item itemvalue="Python.lbfgsb" />
         <item itemvalue="Python.MMM_all_samples" />
-        <item itemvalue="Python.basic_model_MMM" />
       </list>
     </recent_temporary>
   </component>
@@ -399,7 +399,9 @@
       <updated>1559533616168</updated>
       <workItem from="1559533617567" duration="57371000" />
       <workItem from="1563268581392" duration="4746000" />
-      <workItem from="1563274182687" duration="32891000" />
+      <workItem from="1563274182687" duration="36570000" />
+      <workItem from="1564316753584" duration="1777000" />
+      <workItem from="1564397414098" duration="2176000" />
     </task>
     <servers />
   </component>
@@ -436,7 +438,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95008000" />
+    <option name="totallyTimeSpent" value="102640000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,13 +451,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19275825" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1970181" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32971996" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37579042" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3604336" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39927733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -514,8 +517,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DMR_1.py</url>
-          <line>167</line>
-          <option name="timeStamp" value="48" />
+          <line>162</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -580,9 +583,6 @@ gamma([1444, 8283])</expression-string>
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_data/signatures_for_michael.npy">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/EM_practice.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -708,20 +708,6 @@ gamma([1444, 8283])</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clinical_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2759">
-          <caret selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda3/lib/python3.7/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -729,20 +715,20 @@ gamma([1444, 8283])</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/author's_lda.py">
+    <entry file="file://$PROJECT_DIR$/author's_lda.py" />
+    <entry file="file://$PROJECT_DIR$/author's_dmr.py" />
+    <entry file="file:///private/var/folders/nr/lr47yfs931sdl0vt83xch47h0000gn/T/com.apple.mail/com.apple.mail/compose/attach/DMR_1.py" />
+    <entry file="file:///anaconda3/lib/python3.7/site-packages/numpy/core/_methods.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3150">
-          <caret line="210" column="56" selection-start-line="210" selection-start-column="56" selection-end-line="210" selection-end-column="56" />
-          <folding>
-            <element signature="e#202#220#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="690">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/author's_dmr.py">
+    <entry file="file://$PROJECT_DIR$/authors_dmr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="450">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="28" />
           <folding>
             <element signature="e#46#64#0" expanded="true" />
           </folding>
@@ -751,56 +737,56 @@ gamma([1444, 8283])</expression-string>
     </entry>
     <entry file="file:///anaconda3/lib/python3.7/site-packages/scipy/optimize/optimize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
+        <state relative-caret-position="4380">
           <caret line="292" selection-start-line="292" selection-end-line="292" />
         </state>
       </provider>
     </entry>
     <entry file="file:///anaconda3/lib/python3.7/site-packages/scipy/optimize/lbfgsb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="281" column="8" lean-forward="true" selection-start-line="281" selection-start-column="8" selection-end-line="281" selection-end-column="8" />
+        <state relative-caret-position="4095">
+          <caret line="281" column="8" selection-start-line="281" selection-start-column="8" selection-end-line="281" selection-end-column="8" />
           <folding>
             <element signature="e#1376#1440#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simple_data/data_for_michael.json">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="204">
-          <caret column="64055" selection-start-column="64055" selection-end-column="64055" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authors_lda.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="540">
           <caret line="40" column="19" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authors_dmr.py">
+    <entry file="file://$PROJECT_DIR$/clinical_data.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="28" />
-          <folding>
-            <element signature="e#46#64#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="45" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file:///anaconda3/lib/python3.7/site-packages/numpy/core/_methods.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+    <entry file="file://$PROJECT_DIR$/simple_data/data_for_michael.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_data/signatures_for_michael.npy">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DMR_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="270">
+          <caret line="129" column="75" selection-start-line="129" selection-start-column="71" selection-end-line="129" selection-end-column="75" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
