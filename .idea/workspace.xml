@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8039055-4e27-4452-a98b-8ad25329332f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/clinical_data_without_missing.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DMR_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMR_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +19,7 @@
     <SUITE FILE_PATH="coverage/MISTI19$lbfgsb.coverage" NAME="lbfgsb Coverage Results" MODIFIED="1563796348296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/anaconda3/lib/python3.7/site-packages/scipy/optimize" />
     <SUITE FILE_PATH="coverage/MISTI19$basic_model_MMM.coverage" NAME="basic_model_MMM Coverage Results" MODIFIED="1561895372876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$authors_dmr.coverage" NAME="authors_dmr Coverage Results" MODIFIED="1563963536989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISTI19$DMR_1.coverage" NAME="DMR_1 Coverage Results" MODIFIED="1564399044501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISTI19$DMR_1.coverage" NAME="DMR_1 Coverage Results" MODIFIED="1564579416423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$EM_basic_model.coverage" NAME="EM_basic_model Coverage Results" MODIFIED="1561377749676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/MISTI19$pytest_in_basic_model_MMM_py.coverage" NAME="pytest in basic_model_MMM.py Coverage Results" MODIFIED="1561554368539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -42,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DMR_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="129" column="75" selection-start-line="129" selection-start-column="71" selection-end-line="129" selection-end-column="75" />
+            <state relative-caret-position="361">
+              <caret line="96" column="72" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="72" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -54,8 +54,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinical_data.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="45" selection-end-line="1" />
+            <state relative-caret-position="8010">
+              <caret line="534" column="35" selection-end-line="561" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clinical_data_without_missing.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7980">
+              <caret line="532" selection-start-line="532" selection-end-line="532" />
             </state>
           </provider>
         </entry>
@@ -103,15 +112,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/authors_lda.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
@@ -131,11 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sequence</find>
-      <find>Model</find>
-      <find>normalize</find>
-      <find>self.n</find>
-      <find>sequen</find>
       <find>update</find>
       <find>refit</find>
       <find>draw_z</find>
@@ -160,6 +155,12 @@
       <find>curr_z</find>
       <find>n_m_</find>
       <find>n_td</find>
+      <find>bfgs</find>
+      <find>sigma</find>
+      <find>new_f</find>
+      <find>PD9582</find>
+      <find>9582</find>
+      <find>clinical</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,6 +178,8 @@
         <option value="$PROJECT_DIR$/author's_dmr.py" />
         <option value="$PROJECT_DIR$/authors_lda.py" />
         <option value="$PROJECT_DIR$/authors_dmr.py" />
+        <option value="$PROJECT_DIR$/clinical_data.csv" />
+        <option value="$PROJECT_DIR$/clinical_data_without_missing.csv" />
         <option value="$PROJECT_DIR$/DMR_1.py" />
       </list>
     </option>
@@ -191,6 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,7 +215,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,7 +404,8 @@
       <workItem from="1563268581392" duration="4746000" />
       <workItem from="1563274182687" duration="36570000" />
       <workItem from="1564316753584" duration="1777000" />
-      <workItem from="1564397414098" duration="2176000" />
+      <workItem from="1564397414098" duration="12013000" />
+      <workItem from="1564579213629" duration="1062000" />
     </task>
     <servers />
   </component>
@@ -438,7 +442,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102640000" />
+    <option name="totallyTimeSpent" value="113539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,28 +455,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1970181" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18530351" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32971996" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3604336" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39927733" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3604336" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39927733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32971996" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32971996" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2538392" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32971996" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005325" side_tool="true" weight="0.32971996" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946752" weight="0.3261066" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49946752" weight="0.32971996" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" x="761" y="414" width="394" height="370" id="SciView" order="3" sideWeight="0.49865228" weight="0.2657082" />
+      <window_info active="true" anchor="right" x="761" y="414" width="394" height="370" id="SciView" order="3" sideWeight="0.49865228" visible="true" weight="0.1799787" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" x="0" y="0" width="259" height="1000" id="Documentation" order="6" sideWeight="0.5013477" side_tool="true" weight="0.32970712" />
@@ -517,8 +520,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DMR_1.py</url>
-          <line>162</line>
-          <option name="timeStamp" value="49" />
+          <line>64</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DMR_1.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -526,49 +534,48 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>gammaln(np.dot(self.x, lam.T)[d][t] + self.n_td[d][t])</expression-string>
+        <expression-string>[self.data[key]['sequence'] == self.categories[j]]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>digamma(np.exp(np.dot(self.x, lam.T))+self.n_td)</expression-string>
+        <expression-string>curr_z[self.data[key]['sequence'] == self.categories[j]]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1)+np.sum(self.n_td, axis=1))</expression-string>
+        <expression-string>curr_z[self.data[key]['sequence'] == self.categories[j]] = tmp_z</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>digamma(np.sum(np.exp(np.dot(self.x, lam.T)), axis=1))</expression-string>
+        <expression-string>tmp_z</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.dot(self.x.T[f], np.exp(np.dot(self.x, lam.T)).T[t].T)</expression-string>
+        <expression-string>self.counts[id][j]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>term1+term2</expression-string>
+        <expression-string>curr_z[self.data[key]['sequence'] == self.categories[j]]
+[self.data[key]['sequence'] == self.categories[j]]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>logsumexp(np.dot(self.x, lam.T), axis=1)</expression-string>
+        <expression-string>self.counts</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.sum(np.exp(np.dot(self.x, lam.T)), axis=1)+np.sum(self.n_td, axis=1)</expression-string>
+        <expression-string>self.counts[id]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.sum(np.exp(np.dot(self.x, lam.T)), axis=1)+np.sum(self.n_td, axis=1)
-
-gamma([1444, 8283])</expression-string>
+        <expression-string>np.unique(self.data[key]['sequence'], return_counts=True)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -718,6 +725,44 @@ gamma([1444, 8283])</expression-string>
     <entry file="file://$PROJECT_DIR$/author's_lda.py" />
     <entry file="file://$PROJECT_DIR$/author's_dmr.py" />
     <entry file="file:///private/var/folders/nr/lr47yfs931sdl0vt83xch47h0000gn/T/com.apple.mail/com.apple.mail/compose/attach/DMR_1.py" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/lib/python3.7/site-packages/IPython/core/interactiveshell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="3266" selection-start-line="3266" selection-end-line="3266" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_data/data_for_michael.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_data/signatures_for_michael.npy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinical_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8010">
+          <caret line="534" column="35" selection-end-line="561" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinical_data_without_missing.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7980">
+          <caret line="532" selection-start-line="532" selection-end-line="532" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///anaconda3/lib/python3.7/site-packages/numpy/core/_methods.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -752,13 +797,6 @@ gamma([1444, 8283])</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authors_lda.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -766,27 +804,10 @@ gamma([1444, 8283])</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinical_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_data/data_for_michael.json">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_data/signatures_for_michael.npy">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DMR_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="129" column="75" selection-start-line="129" selection-start-column="71" selection-end-line="129" selection-end-column="75" />
+        <state relative-caret-position="361">
+          <caret line="96" column="72" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="72" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
