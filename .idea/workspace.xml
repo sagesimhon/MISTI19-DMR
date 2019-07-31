@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8039055-4e27-4452-a98b-8ad25329332f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clinical_data_without_missing.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DMR_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMR_1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +17,7 @@
     <SUITE FILE_PATH="coverage/MISTI19$lbfgsb.coverage" NAME="lbfgsb Coverage Results" MODIFIED="1563796348296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/anaconda3/lib/python3.7/site-packages/scipy/optimize" />
     <SUITE FILE_PATH="coverage/MISTI19$basic_model_MMM.coverage" NAME="basic_model_MMM Coverage Results" MODIFIED="1561895372876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$authors_dmr.coverage" NAME="authors_dmr Coverage Results" MODIFIED="1563963536989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MISTI19$DMR_1.coverage" NAME="DMR_1 Coverage Results" MODIFIED="1564579416423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MISTI19$DMR_1.coverage" NAME="DMR_1 Coverage Results" MODIFIED="1564589013426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MISTI19$EM_basic_model.coverage" NAME="EM_basic_model Coverage Results" MODIFIED="1561377749676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/MISTI19$pytest_in_basic_model_MMM_py.coverage" NAME="pytest in basic_model_MMM.py Coverage Results" MODIFIED="1561554368539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -42,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DMR_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="96" column="72" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="72" />
+            <state relative-caret-position="576">
+              <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -54,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinical_data.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8010">
+            <state relative-caret-position="118">
               <caret line="534" column="35" selection-end-line="561" />
             </state>
           </provider>
@@ -405,7 +403,7 @@
       <workItem from="1563274182687" duration="36570000" />
       <workItem from="1564316753584" duration="1777000" />
       <workItem from="1564397414098" duration="12013000" />
-      <workItem from="1564579213629" duration="1062000" />
+      <workItem from="1564579213629" duration="2301000" />
     </task>
     <servers />
   </component>
@@ -442,7 +440,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113539000" />
+    <option name="totallyTimeSpent" value="114778000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -461,8 +459,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32971996" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3604336" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39927733" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3604336" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39927733" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32971996" />
@@ -475,7 +473,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" x="761" y="414" width="394" height="370" id="SciView" order="3" sideWeight="0.49865228" visible="true" weight="0.1799787" />
+      <window_info anchor="right" x="761" y="414" width="394" height="370" id="SciView" order="3" sideWeight="0.49865228" visible="true" weight="0.2140575" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" x="0" y="0" width="259" height="1000" id="Documentation" order="6" sideWeight="0.5013477" side_tool="true" weight="0.32970712" />
@@ -525,8 +523,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DMR_1.py</url>
-          <line>92</line>
-          <option name="timeStamp" value="71" />
+          <line>94</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -739,23 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simple_data/data_for_michael.json">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_data/signatures_for_michael.npy">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clinical_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8010">
-          <caret line="534" column="35" selection-end-line="561" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clinical_data_without_missing.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7980">
@@ -804,10 +785,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/simple_data/data_for_michael.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinical_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="534" column="35" selection-end-line="561" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_data/signatures_for_michael.npy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/DMR_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="96" column="72" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="72" />
+        <state relative-caret-position="576">
+          <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

@@ -77,14 +77,14 @@ class DMR:
         ############################### Form P ###############################
 
         P = np.empty((self.D, self.m, self.T)) # probability for each topic-mutation pair (z=i, w=j) given alpha and phi
-
+        print('80')
         for d in range(self.D): # for each sample
             for m in range(self.m): # for each category
                 for t in range(self.T):  # for each topic
                     P[d, m, t] = self.phi[t, m]*(self.alpha[d, t]+1)/(1+np.sum(self.alpha[d]))
         s = P.sum(axis=2, keepdims=True) #### keep dims?
         P /= s
-
+        print('87')
         # parse data into array of arrays (560 by n_d for each) using self.counts/self.categories
         _, m = self.phi.shape
         self.z = []
@@ -92,9 +92,12 @@ class DMR:
 
         for id, key in enumerate(self.clinical_data):
             curr_z = np.zeros(len(self.data[key]['sequence']))
+            idx = 0
             for j in range(len(self.categories)): # For each mutation category draw counts[j] topics for that particular document's counts array
                 tmp_z = np.random.choice(np.arange(self.T), size=self.counts[id][j], p=P[id, self.categories[j]]) # draw counts[j] samples for some mutation category j
-                curr_z[self.data[key]['sequence'] == self.categories[j]] = tmp_z
+                curr_z[idx:idx + self.counts[id][j]] = tmp_z
+                idx += self.counts[id][j]
+                #curr_z[self.data[key]['sequence'] = self.categories[j]] == tmp_z
             self.z.append(curr_z) # len of curr_z is n_d and number in each entry ranges from 0-11 (topics)
 
             parsed_data[id] = self.data[key]['sequence']
