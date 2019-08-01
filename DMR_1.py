@@ -63,11 +63,15 @@ class DMR:
 
         """For each sample, get bin counts of mutations matrix (document by mutations = 560 by 96), and categories"""
         self.counts = [None]*(self.D-1) #currently hardcoded for 559 samples
+        self.B = np.zeros((self.D-1, self.m))  #currently hardcoded for 559 samples
         for id, key in enumerate(self.clinical_data):
             if key not in self.data:
                 self.clinical_data.remove(key)
                 continue
             self.categories, self.counts[id] = np.unique(self.data[key]['sequence'], return_counts=True)
+            tmp = np.zeros(self.m)
+            tmp[self.categories] = self.counts[id]
+            self.B[id] = tmp
 
     def __draw_z(self):
         """Draw z from distributions - vector of length n_d for each document, topic
@@ -87,27 +91,55 @@ class DMR:
         print('87')
         # parse data into array of arrays (560 by n_d for each) using self.counts/self.categories
         _, m = self.phi.shape
-        self.z = []
+        #self.z = []
         parsed_data = [None]*self.D
+        #
+        # for i, key in enumerate(self.clinical_data):
+        #     curr_z = np.zeros(len(self.data[key]['sequence']))
+        #     self.z = {}
+        #     self.z[key] = np.zeros(len(self.data[key]['sequence']), dtype='int')
+        #     idx = 0
+        #     for j in range(len(self.categories)): # For each mutation category draw counts[j] topics for that particular document's counts array
+        #         tmp_z = np.random.choice(np.arange(self.T), size=self.counts[i][j], p=P[i, self.categories[j]]) # draw counts[j] samples for some mutation category j
+        #         add = self.counts[i][j]
+        #         curr_z[idx:idx + add] = tmp_z
+        #         idx += add
+        #     self.z[key] = curr_z # len of curr_z is n_d and number in each entry ranges from 0-11 (topics)
+        #
+        #     parsed_data[i] = self.data[key]['sequence']
+        #     categories_t, counts_t = np.unique(curr_z, return_counts=True)
+        #     # if id == 0: print('curr_z: ', [o for o in curr_z])
+        #
+        #     ############################# Update self.n_td accordingly #############################
+        #
+        #     for t in range(self.T):
+        #         self.n_td[i][t] = counts_t[t]
+        self.samples_z = {}
 
         for id, key in enumerate(self.clinical_data):
-            curr_z = np.zeros(len(self.data[key]['sequence']))
+            self.samples_z[key] = np.zeros(len(self.data[key]['sequence']), dtype='int')
+
+        arange_T = np.arange(self.T)
+        for id, key in enumerate(self.clinical_data):
             idx = 0
-            for j in range(len(self.categories)): # For each mutation category draw counts[j] topics for that particular document's counts array
-                tmp_z = np.random.choice(np.arange(self.T), size=self.counts[id][j], p=P[id, self.categories[j]]) # draw counts[j] samples for some mutation category j
-                curr_z[idx:idx + self.counts[id][j]] = tmp_z
-                idx += self.counts[id][j]
-                #curr_z[self.data[key]['sequence'] = self.categories[j]] == tmp_z
-            self.z.append(curr_z) # len of curr_z is n_d and number in each entry ranges from 0-11 (topics)
+            for j in range(len(
+                    self.categories)):  # For each mutation category draw counts[j] topics for that particular document's counts array
+                tmp_z = np.random.choice(arange_T, size=int(self.B[id][j]), p=P[id, self.categories[j]])  # draw counts[j] samples for some mutation category j
+                self.samples_z[key][idx:idx + int(self.B[id][j])] = tmp_z
+                idx += int(self.B[id][j])
 
             parsed_data[id] = self.data[key]['sequence']
-            categories_t, counts_t = np.unique(curr_z, return_counts=True)
+            B_t = np.zeros(self.T)
+            categories_t, counts_t = np.unique(self.samples_z[key], return_counts=True)
+            tmp = np.zeros(self.T)
+            tmp[categories_t] = counts_t
+            B_t = tmp
             # if id == 0: print('curr_z: ', [o for o in curr_z])
 
             ############################# Update self.n_td accordingly #############################
 
             for t in range(self.T):
-                self.n_td[id][t] = counts_t[t]
+                self.n_td[id][t] = B_t[t]
 
         print('draw z')
 
@@ -139,7 +171,6 @@ class DMR:
             for f in range(self.F+1):
                 ll -= lam[t, f]**2 / (2*self.sigma**2)
                 ll -= np.log(np.sqrt(2*np.pi*self.sigma**2))
-        print('ll')
         return -ll
 
     def d_log_likelihood_lam(self, lam):
@@ -154,7 +185,6 @@ class DMR:
             - digamma(np.exp(np.dot(self.x, self.lam.T)))[:,:,np.newaxis]), axis=0)\
             - lam / (self.sigma ** 2)
         result = -result
-        print('dll')
         return result
 
     def optimize_lambda(self):
