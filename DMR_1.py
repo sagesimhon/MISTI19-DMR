@@ -3,13 +3,14 @@ from scipy.special import logsumexp
 from scipy.special import gammaln as gammaln
 from scipy import optimize as optimize
 from scipy.special import digamma as digamma
+import matplotlib.pyplot as plt
 import json
 import math
 import csv
 
 
 class DMR:
-    """Topic Model with DMR"""
+    """Topic Model using DMR"""
     def __init__(self, phi, x, data, clinical_data, mu=0, sigma=1, epsilon=1e-4, max_iter=1e4):
         # usually T=12, F=0, D=560, m=96
 
@@ -53,15 +54,17 @@ class DMR:
 
     def __draw_lambda(self):
         """Draw lambda_t for topic t from normal distribution (default values of mu and sigma)"""
+
         self.lam = np.random.normal(self.mu, math.sqrt(self.sigma), size=self.lam.shape)
 
     def __calculate_alpha(self):
         """Calculate alpha as exp product of x and lambda transpose matrices"""
+
         self.alpha = np.exp(np.dot(self.x, self.lam.T))
 
     def __organize_data(self):
-
         """For each sample, get bin counts of mutations matrix (document by mutations = 560 by 96), and categories"""
+
         self.counts = [None]*(self.D-1) #currently hardcoded for 559 samples
         self.B = np.zeros((self.D-1, self.m))  #currently hardcoded for 559 samples
         for id, key in enumerate(self.clinical_data):
@@ -91,29 +94,8 @@ class DMR:
         print('87')
         # parse data into array of arrays (560 by n_d for each) using self.counts/self.categories
         _, m = self.phi.shape
-        #self.z = []
         parsed_data = [None]*self.D
-        #
-        # for i, key in enumerate(self.clinical_data):
-        #     curr_z = np.zeros(len(self.data[key]['sequence']))
-        #     self.z = {}
-        #     self.z[key] = np.zeros(len(self.data[key]['sequence']), dtype='int')
-        #     idx = 0
-        #     for j in range(len(self.categories)): # For each mutation category draw counts[j] topics for that particular document's counts array
-        #         tmp_z = np.random.choice(np.arange(self.T), size=self.counts[i][j], p=P[i, self.categories[j]]) # draw counts[j] samples for some mutation category j
-        #         add = self.counts[i][j]
-        #         curr_z[idx:idx + add] = tmp_z
-        #         idx += add
-        #     self.z[key] = curr_z # len of curr_z is n_d and number in each entry ranges from 0-11 (topics)
-        #
-        #     parsed_data[i] = self.data[key]['sequence']
-        #     categories_t, counts_t = np.unique(curr_z, return_counts=True)
-        #     # if id == 0: print('curr_z: ', [o for o in curr_z])
-        #
-        #     ############################# Update self.n_td accordingly #############################
-        #
-        #     for t in range(self.T):
-        #         self.n_td[i][t] = counts_t[t]
+
         self.samples_z = {}
 
         for id, key in enumerate(self.clinical_data):
@@ -122,19 +104,17 @@ class DMR:
         arange_T = np.arange(self.T)
         for id, key in enumerate(self.clinical_data):
             idx = 0
-            for j in range(len(
-                    self.categories)):  # For each mutation category draw counts[j] topics for that particular document's counts array
+            for j in range(len(self.categories)):  # For each mutation category draw counts[j] topics for that particular document's counts array
                 tmp_z = np.random.choice(arange_T, size=int(self.B[id][j]), p=P[id, self.categories[j]])  # draw counts[j] samples for some mutation category j
                 self.samples_z[key][idx:idx + int(self.B[id][j])] = tmp_z
                 idx += int(self.B[id][j])
 
             parsed_data[id] = self.data[key]['sequence']
-            B_t = np.zeros(self.T)
+            #B_t = np.zeros(self.T)
             categories_t, counts_t = np.unique(self.samples_z[key], return_counts=True)
             tmp = np.zeros(self.T)
             tmp[categories_t] = counts_t
             B_t = tmp
-            # if id == 0: print('curr_z: ', [o for o in curr_z])
 
             ############################# Update self.n_td accordingly #############################
 
@@ -145,20 +125,9 @@ class DMR:
 
     def log_likelihood_lam(self, lam):
         """Log-likelihood P(z, lambda), using self.z and self.lam"""
-        # term1 = 0
-        # term2 = 0
+
         alpha = np.exp(np.dot(self.x, lam.T))
-        # for d in range(self.D):
-        #     term1 += gammaln(sum(alpha, axis=1))
-        #     term1 -= gammaln(sum(alpha+self.n_td, axis=1))
-        #     for t in range(self.T):
-        #         term1 += gammaln(alpha[d][t] + self.n_td[d][t])
-        #         term1 -= gammaln(alpha)[d][t]
-        # for t in range(self.T):
-        #     for f in range(self.F):
-        #         term2 += math.log(1/math.sqrt(2*math.pi*self.sigma**2))*(-lam[t][f]**2/(2*self.sigma**2))
-        #
-        # return -sum(term1+term2)
+
         ll = 0
         for d in range(self.D):
             ll += gammaln(np.sum(alpha[d]))
@@ -204,8 +173,8 @@ class DMR:
         random_starting_point = np.random.rand(self.lam.shape[0], self.lam.shape[1])
         newlam, val, convergence = optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[0], optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[1], optimize.fmin_l_bfgs_b(ll, random_starting_point, dll)[2]['warnflag']
         newlam = newlam.reshape((self.T, (self.F + 1)))
-        self.sigma = np.var(newlam.T[1]) #todo fix
-        self.mu = np.mean(newlam.T[1]) #todo fix
+        self.sigma = np.var(newlam.T[1])
+        self.mu = np.mean(newlam.T[1])
         self.lam = newlam
         self.__calculate_alpha()
         print('optimize lambda')
@@ -215,18 +184,13 @@ class DMR:
         """Fit data by stochastic EM"""
         iters = 0
         f = self.log_likelihood_lam(self.lam)
+        ll_array = []
+        ll_array.append(f)
         counter = 0
         while iters < self.max_iter:
-            #c = self.optimize_lambda()[0]
             new_f = self.optimize_lambda()[1]
             self.__draw_z()
-
-            #print('lambda: ', self.lam)
-            # if c == 0:
-            #     print('CONVERGENCE. Total iterations: ', iters)
-            #     print('phi: ', self.phi)
-            #     break
-
+            ll_array.append(f)
             if new_f >= f: # if no improvement in this iteration
                 counter += 1
             else:
@@ -235,7 +199,13 @@ class DMR:
                 print('No more improvement. Total iterations: ', iters)
                 print(new_f)
                 break
+            # every 10 iters print plot of f
+            if iters%10 == 0:
+                plt.plot(ll_array)
+                plt.ylabel('log likelihood')
+                plt.show()
             print('iters: ', iters)
+            print('lambda: ', self.lam)
             f = new_f
             iters += 1
 
@@ -256,7 +226,6 @@ def load_test_files(sequence_data_filename='simple_data/data_for_michael.json', 
         clinical_data = []
         for row in csv_reader:
             if row_idx != 0:
-                #want array of cols 3 to 6 (features)
                 #want array of cols 1 to 1 (age)
                 for feature_idx, val in enumerate(row[1:1]):
                     x[row_idx-1][feature_idx] = val
