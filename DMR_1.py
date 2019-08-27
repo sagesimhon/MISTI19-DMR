@@ -89,7 +89,7 @@ class DMR:
             for m in range(self.m): # for each category
                 for t in range(self.T):  # for each topic
                     P[d, m, t] = self.phi[t, m]*(self.alpha[d, t]+1)/(1+np.sum(self.alpha[d]))
-        s = P.sum(axis=2, keepdims=True) #### keep dims?
+        s = P.sum(axis=2, keepdims=True)
         P /= s
         print('87')
         # parse data into array of arrays (560 by n_d for each) using self.counts/self.categories
